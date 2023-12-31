@@ -1,0 +1,134 @@
+<div class="container">
+    <div class="top-navbar">
+        <div class="logo">
+            <i class="fa-solid fa-bars hamburger"></i>
+            <div class="logo-img">
+                <img src="/img/logo.png" alt="">
+            </div>
+            
+        </div>
+        <span class="navbar-section-2">
+            <div class="freetrial">
+                <p>Free Trial | <span id="timeleft">2 days left</span> </p>
+                <p id="extendtrial">Extrend Free Trial</p>
+            </div>
+            <div class="profile">
+                <img src="/img/profilepic.png" alt="">
+                <img src="/img/dropdown.png" alt="">
+            </div>
+        </span>
+        
+    </div>
+    <main>
+        <div class="sidebar">
+            <div class="sections-container">
+                <div class="sec-1-2">
+                    <div class="navbar-sec1">
+                        <div class="myProject flex">
+                            <img src="/img/myproject.png" alt="" class="customImg">
+                            <ul>
+
+                                <li><a href="/">My Projects</a></li>
+                            </ul>
+                        </div>
+                        <div class="sampleProject flex">
+                            <img src="/img/sampleproject.png" alt="" class="customImg">
+                            <ul>
+
+                                <li><a href="#">Sample Projects</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="navbar-sec2">
+                        <div class="apps flex">
+                            <img src="/img/apps.png" alt="" class="customImg">
+                            <ul>
+
+                                <li><a href="#">Apps</a></li>
+                            </ul>
+                        </div>
+                        <div class="introToNecleo flex">
+                            <img src="/img/introToNecleo.png" alt=""
+                                class="customImg">
+                            <ul>
+
+                                <li><a href="#">Intro to Necleo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-sec3">
+                    <div class="helpSupport flex">
+                        <img src="/img/help.png" alt="" class="customImg">
+                        <ul>
+
+                            <li><a href="#">Help & Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="feedback flex">
+                        <img src="/img/feedback.png" alt="" class="customImg">
+                        <ul>
+
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="collapse flex">
+                        <img src="/img/collapse.png" alt="" class="customImg">
+                        <ul>
+
+                            <li><a href="#" style="color:black">Collapse</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="header-btns">
+                <a href="/" id="arrowback"> &larr;</a>
+                <!-- <a href="/add-card" class="btn btn-danger deleteBtn">Delete</a> -->
+                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal">
+                    Delete
+                  </button>
+            </div>
+            <div class="cardShow">
+                <img src="<%= card.imgurl %>" alt="Card Image">
+                      <div class="form">
+                        
+                        <form action="/viewcard/<%= card._id %>?_method=PUT" method="post" class="addForm">
+                            
+                            <label for="author">Author</label>
+                            <input type="text" placeholder="Author" name="author" value="<%= card.author %>">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="" cols="30" rows="10" placeholder="Write Something...." ><%= card.description %></textarea>
+                            <button type="submit">Update</button>
+                        </form>
+                    </div> 
+            </div>
+            
+        </div>
+    </main>
+
+</div>
+<div class="modal fade" tabindex="-1" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">You are about to Delete a Note</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            This will delete your note <b class="fw-bold"><%= card.author %></b>
+        </p>
+        </div>
+        <div class="modal-footer">
+          <form action="/viewcard/delete/<%= card._id %>?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+          </form>
+           
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

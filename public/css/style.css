@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column
+}
+
+main {
+  display: flex;
+  position: relative;
+}
+
+span.navbar-section-2 {
+  display: flex;
+}
+
+.sidebar {
+  width: 241px;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+
+}
+
+.flex {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 0.5rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+
+
+.sidebar a {
+
+  color: #C4C4C4;
+  text-decoration: none;
+  font-size: calc(0.8rem + 0.1vw);
+  /* font-size: 1rem; */
+}
+
+a:visited {
+  color: #C4C4C4;
+  /* Set the color for visited links */
+}
+
+.logo {
+  border-bottom: 2px solid #ded9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  /* margin: 1rem; */
+  padding: 1.5rem
+}
+
+.navbar-sec1 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: 2px solid #ded9d9;
+}
+
+.customImg {
+  margin-right: 10px;
+}
+
+.myProject ul li a {
+  color: #FA782F;
+  font-weight: bold;
+}
+
+.navbar-sec2 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 1rem;
+  width: 13.1rem;
+  /* border-bottom: 2px solid #ded9d9; */
+}
+
+.navbar-sec3 {
+  /* margin-top: 100%; */
+  margin: 1rem;
+}
+
+.sections-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.content {
+  width: 100%;
+  background-color: #f4f1ef;
+}
+
+.top-navbar {
+  width: 100%;
+  /* height: 3rem; */
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.freetrial {
+  margin: 1rem;
+}
+
+.freetrial p span {
+  font-size: 10px;
+}
+
+.freetrial p {
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+#extendtrial {
+  color: #FA782F;
+  font-size: 10px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+i.hamburger {
+  display: flex;
+}
+
+.header-btns {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.header-btns a {
+  color: #000000;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: 800;
+  color: #FA782F;
+}
+.header-btns .deleteBtn{
+  color: black;
+}
+.header-btns h1 {
+  font-weight: 900;
+  font-size: 3rem
+}
+
+@media only screen and (max-width: 600px) {
+  span.navbar-section-2 {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .header-btns a {
+    font-size: 1rem;
+  }
+
+  .header-btns h1 {
+    font-size: 1rem;
+  }
+}
+/* form */
+.form {
+  /* background-color: #ffffff; */
+  /* margin-top: 5%; */
+}
+
+.form form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input[name="author"] {
+  padding: 0.5rem;
+  border-radius: 3rem;
+  border: none;
+  border: 2px solid green;
+}
+
+textarea[name="description"] {
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  border: 2px solid green;
+}
+.form form label{
+  font-size: 2rem;
+  margin: 0.5rem;
+  font-weight: bold;
+}
+.form form button{
+  margin-top: 1rem;
+    font-size: 1rem;
+    /* padding: 1rem; */
+    padding: 0.5rem 4rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 29px;
+    background-color: orange;
+    color: white
+}
+#cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center
+}
+#cardContainer .card{
+  margin: 0.5rem;
+  text-align: center;
+  border: 5px solid orange;
+  border-radius: 5px;
+}
+
+.cardShow{
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 991px) {
+  .sidebar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1
+  }
+
+  i.hamburger {
+    display: flex!important;
+    margin-right: 5rem
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .sidebar {
+    display: flex;
+  }
+
+  i.hamburger {
+    display: none;
+  }
+}
+

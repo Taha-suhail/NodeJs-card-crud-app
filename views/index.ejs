@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="top-navbar">
+        <div class="logo">
+            <i class="fa-solid fa-bars hamburger"></i>
+            <div class="logo-img">
+                <img src="/img/logo.png" alt="">
+            </div>
+            
+        </div>
+        <span class="navbar-section-2">
+            <div class="freetrial">
+                <p>Free Trial | <span id="timeleft">2 days left</span> </p>
+                <p id="extendtrial">Extrend Free Trial</p>
+            </div>
+            <div class="profile">
+                <img src="/img/profilepic.png" alt="">
+                <img src="/img/dropdown.png" alt="">
+            </div>
+        </span>
+        
+    </div>
+    <main>
+        <div class="sidebar">
+            <div class="sections-container">
+                <div class="sec-1-2">
+                    <div class="navbar-sec1">
+                        <div class="myProject flex">
+                            <img src="/img/myproject.png" alt="" class="customImg">
+                            <ul>
+
+                                <li><a href="/">My Projects</a></li>
+                            </ul>
+                        </div>
+                        <div class="sampleProject flex">
+                            <img src="/img/sampleproject.png" alt="" class="customImg">
+                            <ul>
+
+                                <li><a href="#">Sample Projects</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="navbar-sec2">
+                        <div class="apps flex">
+                            <img src="/img/apps.png" alt="" class="customImg">
+                            <ul>
+
+                                <li><a href="#">Apps</a></li>
+                            </ul>
+                        </div>
+                        <div class="introToNecleo flex">
+                            <img src="/img/introToNecleo.png" alt=""
+                                class="customImg">
+                            <ul>
+
+                                <li><a href="#">Intro to Necleo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar-sec3">
+                    <div class="helpSupport flex">
+                        <img src="/img/help.png" alt="" class="customImg">
+                        <ul>
+
+                            <li><a href="#">Help & Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="feedback flex">
+                        <img src="/img/feedback.png" alt="" class="customImg">
+                        <ul>
+
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                    <div class="collapse flex">
+                        <img src="/img/collapse.png" alt="" class="customImg">
+                        <ul>
+
+                            <li><a href="#" style="color:black">Collapse</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="header-btns">
+                <h1>My Projects</h1>
+                <a href="/add-card">+Add</a>
+            </div>
+            <div id="cardContainer">
+                <% if (card.length >0) { %>
+                    <% card.forEach((card,index) => { %>
+                        <div class="card">
+                          <!-- Render card content here -->
+                          <a href="/viewcard/<%= card._id %>"> <img src="<%= card.imgurl %>" alt="Card Image"></a>
+                          <p><strong>Author:</strong> <%= card.author %></p>
+                        </div>
+                        <% if ((index + 1) % 3 === 0) { %>
+                            <div style="width: 100%; margin-bottom: 10px;"></div>
+                          <% } %>
+                      <% }); %>
+                <% } else{ %>
+                    <h1>Lets start by adding your first <a href="/add-card" style="color: orange;">card</a> </h4>
+              <%  } %>
+                
+                  
+               
+              </div>
+            
+        </div>
+    </main>
+
+</div>
